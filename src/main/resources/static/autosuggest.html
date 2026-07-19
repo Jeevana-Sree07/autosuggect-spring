@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+     <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+    <span class="gear" > &#x2699; </span>
+    <span class="pill"> &#x2022; online | &#x1F552; - ms </span>
+    <h1 class="logo"> 
+        <span class="logo-first">Being</span>
+        Infinity </h1>
+    <p class="tag-line"> One million phrases. Four Algorithms. 
+                Prefix based autosuggest.</p>
+    <span class="lens"> &#128269; </span>
+    <input class="search-box" type="text" 
+    placeholder="Start typing to search phrases.." >
+    
+         <script>
+            function getSearchSugssestins(){
+                var searchBox = document.getElementById("searchbox");
+                var searchsuggestions = documet.getElementById("search-suggestions");
+                var userInput = searchBox.value;
+                if(userInput.trim() === "")return;
+                var URL1= "https://autosuggest-backend.onrender.com/api/autosuggest?q=";
+                var URL3= "ba&algorithm=brute&limit=10&weighted=false"
+                var URL = URL1 + userInput + URL3;
+            fetch(URL){
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    var searchResults = "";
+                    var suggestions = data.results;
+                    for(var i=0; i<data.count; i++){
+                        searchResults+= "<div class='suggestion'>"+
+                            suggestions[i].text +
+                             "</div>";
+                    } 
+                    searchsuggestions.innerHTML = searchResults;
+                })
+            }            }
+
+</div>
+</body>
+</html>

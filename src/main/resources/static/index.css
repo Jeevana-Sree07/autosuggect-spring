@@ -53,3 +53,46 @@ h1 {
     width: 80%;
     border-radius: 8px;
 }
+ body {
+            text-align:center;
+            background-color:aliceblue;
+        }
+        .gear{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        .pill{
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        .logo{
+            margin-top: 100px;
+            font-size: 80px;
+        }
+        .logo-one{
+            color: purple;
+        }
+        .tagline{
+            color: gray;
+        }
+        .searchbox{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+            width: 70%;
+        }
+        .suggestionbox{
+             width: 70%;
+            margin: 8px 0 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            text-align: left;
+            margin: 0px auto;
+            background-color: white;
+        }
+    
